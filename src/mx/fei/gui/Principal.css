@@ -1,0 +1,46 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 16/05/2018, 05:59:47 PM
+    Author     : adolf
+*/
+
+.mainFxmlClass{
+}
+
+.header{
+    -fx-background-color: #2E7D32
+}
+
+.banner{
+    -fx-background-color: #FAFAFA;
+}
+
+#cajaRenta{
+    -fx-background-color: #FFFFFF;
+}
+
+#iniciarSesion{
+    -fx-background-color: #81C784;
+}
+
+#GridPane{
+    -fx-background-color: #212121;
+}
+
+#botonBuscar{
+    -fx-background-color: #FFFFFF;
+    -fx-background-radius: 10em;
+}
+
+#slider{
+    -fx-background-color: #000000;
+}
+
+#botonRentar{
+    -fx-background-color: #AED581;
+}
+  

@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXTimePicker?>
+<?import com.jfoenix.controls.JFXDatePicker?>
+<?import java.net.URL?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.text.Font?>
+
+<GridPane id="GridPane"
+          prefHeight="600.0"
+          prefWidth="800.0"
+          xmlns="http://javafx.com/javafx/9.0.1"
+          xmlns:fx="http://javafx.com/fxml/1"
+          fx:controller="mx.fei.gui.PrincipalController">
+    
+    <stylesheets>
+        <URL value="@Principal.css" />
+    </stylesheets>
+    
+    <HBox prefHeight="60"
+          prefWidth="800"
+          styleClass="header"
+          GridPane.rowIndex="1">
+        
+        <StackPane HBox.hgrow="ALWAYS">
+            <ImageView fitWidth="100"
+                       fitHeight="80"
+                       StackPane.alignment="CENTER_LEFT">
+                
+                <image>
+                    <Image url="mx/fei/images/logo.png" />
+                </image>
+            
+            </ImageView>
+            
+            <Label text="SARA"
+                   StackPane.alignment="CENTER_LEFT">
+                <font>
+                    <Font size="32" />
+                </font>
+                <StackPane.margin>
+                    <Insets left="100"/>
+                </StackPane.margin>
+            </Label>
+            
+            <TextField StackPane.alignment="CENTER_RIGHT"
+                       maxWidth="200"
+                       promptText="Buscar...">
+                <StackPane.margin>
+                    <Insets right="145"/>
+                </StackPane.margin>
+            </TextField>
+            
+            <JFXButton fx:id="botonBuscar"
+                       StackPane.alignment="CENTER_RIGHT">
+                
+                <StackPane.margin>
+                    <Insets right="110"/>
+                </StackPane.margin>
+                
+                <graphic>
+                    <ImageView fitHeight="18"
+                               fitWidth="20"
+                               preserveRatio="true">
+                        <image>
+                            <Image url="mx/fei/images/search.png"/>
+                        </image>
+                    </ImageView>
+                </graphic>
+            </JFXButton>
+            
+            <JFXButton fx:id="iniciarSesion"
+                       text="Iniciar Sesion"
+                       StackPane.alignment="CENTER_RIGHT"
+                       onAction="#cargarPaginaLogin">
+                <StackPane.margin>
+                    <Insets right="10" />
+                </StackPane.margin>
+            </JFXButton>
+        
+        </StackPane>
+    </HBox>
+    
+    <ImageView fx:id="slider"
+               GridPane.rowIndex="2"
+               fitHeight="350"
+               fitWidth="800"
+               pickOnBounds="true">
+        <image>
+            <Image url="mx/fei/images/car-star.jpg" />
+        </image>
+    </ImageView>
+    
+    <HBox GridPane.rowIndex="3">
+        <StackPane styleClass="banner"
+          prefWidth="540"
+          prefHeight="100">
+            
+            <VBox StackPane.alignment="TOP_LEFT">
+                <Label text="Entrega y devolución" />
+                <JFXComboBox fx:id="flotillas"
+                         promptText="Ciudad"
+                         prefWidth="150"
+                         prefHeight="30"
+                         />
+                <StackPane.margin>
+                    <Insets top="20" left="20"/>
+                </StackPane.margin>
+            </VBox>
+            
+            <VBox StackPane.alignment="TOP_LEFT">
+                <Label text="Entrega" />
+                <HBox  fx:id="horaRecogida">
+                    <JFXDatePicker fx:id="fechaRecogida"
+                                   promptText="Fecha de Recogida"
+                                   prefWidth="200"
+                                   prefHeight="30"/>
+                    <JFXTimePicker
+                         promptText="Hora de Recogida"
+                         prefWidth="200"
+                                   prefHeight="30">
+                        <HBox.margin>
+                            <Insets left="10"/>
+                        </HBox.margin>
+                    </JFXTimePicker>
+                </HBox>
+                <StackPane.margin>
+                    <Insets top="20" left="200" right="20"/>
+                </StackPane.margin>
+            </VBox>
+            
+            <VBox StackPane.alignment="BOTTOM_LEFT">
+                <Label text="Devolución" />
+                <HBox>
+                    <JFXDatePicker promptText="Fecha de devolución"
+                                   prefWidth="150"
+                                   prefHeight="30"/>
+                    <JFXTimePicker
+                         promptText="Hora de devolución"
+                         prefWidth="150"
+                         prefHeight="30">
+                        <HBox.margin>
+                            <Insets left="10"/>
+                        </HBox.margin>
+                    </JFXTimePicker>
+                </HBox>
+                <StackPane.margin>
+                    <Insets top="80" bottom="20" left="20"/>
+                </StackPane.margin>
+            </VBox>
+            
+            <JFXButton StackPane.alignment="BOTTOM_RIGHT"
+                       text="Rentar Auto"
+                       fx:id="botonRentar"
+                       prefHeight="40"
+                       prefWidth="180">
+                <StackPane.margin>
+                    <Insets top="80" bottom="20" right="20"/>
+                </StackPane.margin>
+            </JFXButton>
+            
+            <HBox.margin>
+                <Insets left="10" top="20" bottom="10"/>
+            </HBox.margin>
+        </StackPane>
+        <ImageView fitWidth="250"
+                   fitHeight="150">
+            <image>
+                <Image url="mx/fei/images/mapa.png"/>
+            </image>
+            
+            <HBox.margin>
+                <Insets left="5" top="20" bottom="10" right="10"/>
+            </HBox.margin>
+        </ImageView>
+    </HBox>
+    
+</GridPane>
