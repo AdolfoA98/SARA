@@ -14,7 +14,7 @@
     <Label text="No motor:"
         GridPane.columnIndex="0" GridPane.rowIndex="1"/>
  
-    <TextField 
+    <TextField fx:id="txtNoMotor"
         GridPane.columnIndex="1" GridPane.rowIndex="1" GridPane.columnSpan="4" maxWidth="200"/>
  
     <Label text="¿Está climatizado?:"
@@ -22,50 +22,54 @@
     <fx:define>
     <ToggleGroup fx:id="toggleGroup1" />
     </fx:define>
-    <RadioButton text="No" toggleGroup="$toggleGroup1" GridPane.columnIndex="1" GridPane.rowIndex="2"/>
-    <RadioButton text="Si" toggleGroup="$toggleGroup1" GridPane.columnIndex="1" GridPane.rowIndex="2" GridPane.halignment="CENTER"/>
+    <RadioButton fx:id="RbNoClima" 
+        text="No" toggleGroup="$toggleGroup1" GridPane.columnIndex="1" GridPane.rowIndex="2"/>
+    <RadioButton fx:id="RbSiClima" 
+        text="Si" toggleGroup="$toggleGroup1" GridPane.columnIndex="1" GridPane.rowIndex="2" GridPane.halignment="CENTER"/>
     
     <Label text="Transmision:"
         GridPane.columnIndex="0" GridPane.rowIndex="3"/>
     <fx:define>
     <ToggleGroup fx:id="toggleGroup2" />
     </fx:define>
-    <RadioButton text="Automatico" toggleGroup="$toggleGroup2" GridPane.columnIndex="1" GridPane.rowIndex="3"/>
-    <RadioButton text="Manual" toggleGroup="$toggleGroup2" GridPane.columnIndex="1" GridPane.rowIndex="3" GridPane.halignment="RIGHT"/>
+    <RadioButton fx:id="RbAutoTransmision" 
+        text="Automatico" toggleGroup="$toggleGroup2" GridPane.columnIndex="1" GridPane.rowIndex="3"/>
+    <RadioButton fx:id="RbManualTransmision"
+        text="Manual" toggleGroup="$toggleGroup2" GridPane.columnIndex="1" GridPane.rowIndex="3" GridPane.halignment="RIGHT"/>
     
     <Label text="No. Pasajeros"
         GridPane.columnIndex="0" GridPane.rowIndex="4"/>
-    <TextField
+    <TextField fx:id="txtNoPasajeros"
         GridPane.columnIndex="1" GridPane.rowIndex="4" GridPane.columnSpan="4" maxWidth="200"/>
     
-    <Label text="No. Puertos"
+    <Label text="No. Puertas"
         GridPane.columnIndex="0" GridPane.rowIndex="5"/>
-    <TextField
+    <TextField fx:id="txtNoPuertas"
         GridPane.columnIndex="1" GridPane.rowIndex="5" GridPane.columnSpan="4" maxWidth="200"/>
     
     <Label text="Marca"
         GridPane.columnIndex="0" GridPane.rowIndex="6"/>
-    <TextField
+    <TextField fx:id="txtMarca"
         GridPane.columnIndex="1" GridPane.rowIndex="6" GridPane.columnSpan="4" maxWidth="200"/>
     
     <Label text="Modelo"
         GridPane.columnIndex="0" GridPane.rowIndex="7"/>
-    <TextField
+    <TextField fx:id="txtModelo"
         GridPane.columnIndex="1" GridPane.rowIndex="7" GridPane.columnSpan="4" maxWidth="200"/>
     
     <Label text="Version"
         GridPane.columnIndex="0" GridPane.rowIndex="8"/>
-    <TextField
+    <TextField fx:id="txtVersion"
         GridPane.columnIndex="1" GridPane.rowIndex="8" GridPane.columnSpan="4" maxWidth="200"/>
     
     <Label text="Kilometraje"
         GridPane.columnIndex="0" GridPane.rowIndex="9"/>
-    <TextField
+    <TextField fx:id="txtKilometraje"
         GridPane.columnIndex="1" GridPane.rowIndex="9" GridPane.columnSpan="4" maxWidth="200"/>
     
     <Label text="Km/L"
         GridPane.columnIndex="0" GridPane.rowIndex="10"/>
-    <TextField
+    <TextField fx:id="txtKml"
         GridPane.columnIndex="1" GridPane.rowIndex="10"  maxWidth="200"/>
     
     <Label text="GPS:"
@@ -73,54 +77,63 @@
     <fx:define>
     <ToggleGroup fx:id="toggleGroup3"/>
     </fx:define>
-    <RadioButton text="No" toggleGroup="$toggleGroup3" GridPane.columnIndex="1" GridPane.rowIndex="11"/>
-    <RadioButton text="Si" toggleGroup="$toggleGroup3" GridPane.columnIndex="1" GridPane.rowIndex="11" GridPane.halignment="CENTER"></RadioButton>
+    <RadioButton fx:id="RbNoGPS"
+        text="No" toggleGroup="$toggleGroup3" GridPane.columnIndex="1" GridPane.rowIndex="11"/>
+    <RadioButton fx:id="RbSiGPS"
+        text="Si" toggleGroup="$toggleGroup3" GridPane.columnIndex="1" GridPane.rowIndex="11" GridPane.halignment="CENTER">
+    </RadioButton>
 
     <Label text="Descripcion:"
         GridPane.columnIndex="0" GridPane.rowIndex="12"
         GridPane.valignment="TOP"/>
-    <TextArea 
+    <TextArea fx:id="txtDescripcion"
         GridPane.columnIndex="1" GridPane.rowIndex="12" maxWidth="200" maxHeight="80"/>
     
     <Label text="Precio/Dia:"
         GridPane.columnIndex="0" GridPane.rowIndex="13"/>
-    <TextField 
-        GridPane.columnIndex="1" GridPane.rowIndex="13" maxWidth="200"/>
+    
     
     <Label text="Estado:"
         GridPane.columnIndex="0" GridPane.rowIndex="14"/>
     <fx:define>
     <ToggleGroup fx:id="toggleGroup4"/>
     </fx:define>
-    <RadioButton text="1" toggleGroup="$toggleGroup4" GridPane.columnIndex="1" GridPane.rowIndex="14"/>
-    <RadioButton text="2" toggleGroup="$toggleGroup4" GridPane.columnIndex="1" GridPane.rowIndex="14">
+    <RadioButton fx:id="RbEstado1"
+        text="1" toggleGroup="$toggleGroup4" GridPane.columnIndex="1" GridPane.rowIndex="14"/>
+    <RadioButton fx:id="RbEstado2" 
+        text="2" toggleGroup="$toggleGroup4" GridPane.columnIndex="1" GridPane.rowIndex="14">
         <GridPane.margin>
             <Insets left="60"/>
         </GridPane.margin>
     </RadioButton>
-    <RadioButton text="3" toggleGroup="$toggleGroup4" GridPane.columnIndex="1" GridPane.rowIndex="14">
+    <RadioButton fx:id="RbEstado3" 
+        text="3" toggleGroup="$toggleGroup4" GridPane.columnIndex="1" GridPane.rowIndex="14">
         <GridPane.margin>
             <Insets left="120"/>
         </GridPane.margin>
     </RadioButton>
-    <RadioButton text="4" toggleGroup="$toggleGroup4" GridPane.columnIndex="1" GridPane.rowIndex="14" GridPane.halignment="RIGHT"/>
+    <RadioButton fx:id="RbEstado4" 
+        text="4" toggleGroup="$toggleGroup4" GridPane.columnIndex="1" GridPane.rowIndex="14" GridPane.halignment="RIGHT"/>
     
      <Label text="Disponible:"
         GridPane.columnIndex="0" GridPane.rowIndex="15"/>
     <fx:define>
     <ToggleGroup fx:id="toggleGroup5"/>
     </fx:define>
-    <RadioButton text="No" toggleGroup="$toggleGroup5" GridPane.columnIndex="1" GridPane.rowIndex="15"/>
-    <RadioButton text="Si" toggleGroup="$toggleGroup5" GridPane.columnIndex="1" GridPane.rowIndex="15" GridPane.halignment="CENTER"></RadioButton>
+    <RadioButton fx:id="RbNoiDisponible"  
+        text="No" toggleGroup="$toggleGroup5" GridPane.columnIndex="1" GridPane.rowIndex="15"/>
+    <RadioButton fx:id="RbsiDisponible"  
+        text="Si" toggleGroup="$toggleGroup5" GridPane.columnIndex="1" GridPane.rowIndex="15" GridPane.halignment="CENTER">
+    </RadioButton>
     
     <HBox spacing="10" alignment="bottom_center" 
         GridPane.columnIndex="1" GridPane.rowIndex="16">
-        <Button text="Agregar"/>
+        <Button text="Agregar" onAction="#crearVehiculo"/>
     </HBox>
         
     <HBox spacing="10" alignment="bottom_right" 
         GridPane.columnIndex="1" GridPane.rowIndex="16">
-        <Button text="Cancelar"/>
+        <Button  text="Cancelar"/>
     </HBox>    
     
 </GridPane>

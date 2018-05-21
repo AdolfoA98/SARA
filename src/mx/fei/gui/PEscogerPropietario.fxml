@@ -21,8 +21,8 @@
     
 </ListView>
 
-<HBox spacing="10" alignment="bottom_center"
-    GridPane.columnIndex="0" GridPane.rowIndex="3"> 
+<HBox spacing="10" alignment="bottom_left"
+    GridPane.columnIndex="0" GridPane.rowIndex="4"> 
      <Button fx:id="boton_aceptar" text="Aceptar" onAction="#cargarPaginaAgregarAuto">
         <GridPane.margin>
             <Insets left="70"/>
@@ -38,4 +38,7 @@
         </GridPane.margin>
     </Button>   
 </HBox>
+
+ <TextField fx:id="txtPropietario"
+        GridPane.columnIndex="0" GridPane.rowIndex="3" alignment="bottom_left" />
 </GridPane>
