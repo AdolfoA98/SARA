@@ -1,0 +1,35 @@
+
+.header{
+    -fx-background-color:#2E7D32;
+}
+
+#GridPane{
+    -fx-background-color: #212121;
+}
+
+#botonBuscar{
+    -fx-background-color: #FFFFFF;
+    -fx-background-radius: 10em;
+}
+
+#iniciarSesion{
+    -fx-background-color: #81C784;
+}
+
+.descriptionBox{
+    -fx-background-color: #FAFAFA;
+}
+
+.disponibilityBox{
+    -fx-background-color: #BDBDBD;
+}
+
+
+.rentBox{
+    -fx-background-color: #4CAF50;
+}
+
+#botonRentar{
+    -fx-background-color: #FAFAFA;
+}
+

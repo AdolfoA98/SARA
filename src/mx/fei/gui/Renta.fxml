@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXCheckBox?>
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+
+<VBox id="vBox" prefHeight="550.0" prefWidth="500.0" styleClass="mainFxmlClass" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mx.fei.gui.RentaController">
+    <stylesheets>
+        <URL value="@renta.css"/>
+    </stylesheets>
+    
+    <Label text="Realizar Renta">
+        <font>
+            <Font size="28"/>
+        </font>
+        <VBox.margin>
+            <Insets top="20" left="20" />
+        </VBox.margin>
+    </Label>
+    
+    <HBox>
+        <Label text="No. Tarjeta"
+                   prefWidth="370">
+            
+            <HBox.margin>
+                <Insets top="10" left="15" right="10"/>
+            </HBox.margin>
+        </Label>
+        <Label text="Últimos digitos"
+               prefWidth="100">
+            
+            <HBox.margin>
+                <Insets top="10" right="10"/>
+            </HBox.margin>
+            
+        </Label>
+    </HBox>
+    
+    <HBox>
+        <TextField fx:id="noTarjeta"
+                   promptText="No. Tarjeta"
+                   prefWidth="370">
+            
+            <HBox.margin>
+                <Insets top="10" left="15" right="10"/>
+            </HBox.margin>
+        </TextField>
+        <TextField fx:id="cuatroDigitos"
+                   promptText="Últimos digitos"
+                   prefWidth="100">
+            
+            <HBox.margin>
+                <Insets top="10" right="10"/>
+            </HBox.margin>
+        </TextField>
+    </HBox>
+    
+    <Label text="Caducidad:"
+           prefWidth="100">
+            
+            <VBox.margin>
+                <Insets top="10" left="15" right="10"/>
+            </VBox.margin>
+    </Label>
+    
+    <HBox>
+        <Label text="Mes"
+                   prefWidth="100">
+            
+            <HBox.margin>
+                <Insets top="10" left="15" right="10"/>
+            </HBox.margin>
+        </Label>
+        <Label text="Año"
+               prefWidth="100">
+            
+            <HBox.margin>
+                <Insets top="10" right="10"/>
+            </HBox.margin>
+            
+        </Label>
+        
+        <Label text="CCV"
+               prefWidth="100">
+            
+            <HBox.margin>
+                <Insets top="10" right="10"/>
+            </HBox.margin>
+            
+        </Label>
+    </HBox>
+    
+    <HBox>
+        <TextField fx:id="mesCaducidad"
+                   promptText="Mes"
+                   prefWidth="100">
+            
+            <HBox.margin>
+                <Insets top="10" left="15" right="10"/>
+            </HBox.margin>
+        </TextField>
+        <TextField fx:id="anioCaducidad"
+                   promptText="Año"
+                   prefWidth="100">
+            
+            <HBox.margin>
+                <Insets top="10" right="10"/>
+            </HBox.margin>
+        </TextField>
+        
+        <TextField fx:id="ccv"
+                   promptText="CCV"
+                   prefWidth="100">
+            
+            <HBox.margin>
+                <Insets top="10" right="10"/>
+            </HBox.margin>
+        </TextField>
+    </HBox>
+    
+    <Label text="Tipo de Tarjeta">
+            
+        <VBox.margin>
+            <Insets top="10" left="15"/>
+        </VBox.margin>
+            
+    </Label>
+    
+    <HBox prefWidth="500">
+        <ComboBox fx:id="tipo"
+                 promptText="Tipo"
+                 prefWidth="150"
+                 prefHeight="30">
+        
+            <HBox.margin>
+                <Insets top="10" left="15"/>
+            </HBox.margin>
+    
+        </ComboBox>
+        
+        <JFXCheckBox fx:id="checkFactura"
+                     text="¿Se necesita factura?">
+            
+            <HBox.margin>
+                <Insets top="10" left="30"/>
+            </HBox.margin>
+            
+        </JFXCheckBox>
+    </HBox>
+    
+    <HBox prefWidth="500"
+          prefHeight="300">
+        <StackPane fx:id="stack"
+                   prefWidth="500"
+                   HBox.hgrow="ALWAYS">
+            
+            <JFXButton fx:id="botonAceptar"
+                       text="Aceptar"
+                       prefWidth="100"
+                       prefHeight="30"
+                       onAction="#realizarRenta"/>
+
+            
+        </StackPane>
+    </HBox>
+    
+</VBox>

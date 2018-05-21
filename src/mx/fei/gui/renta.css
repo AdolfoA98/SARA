@@ -1,0 +1,15 @@
+/*
+ * Empty Stylesheet file.
+ */
+
+.mainFxmlClass {
+
+}
+
+#tipo{
+    -fx-background-color: #FFFFFF;
+}
+
+#botonAceptar{
+    -fx-background-color:#4CAF50;
+}

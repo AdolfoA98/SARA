@@ -1,0 +1,15 @@
+/*
+ * Empty Stylesheet file.
+ */
+
+.mainFxmlClass {
+
+}
+
+.rentBox{
+    -fx-background-color: #4CAF50;
+}
+
+#botonRentar{
+    -fx-background-color: #FAFAFA;
+}

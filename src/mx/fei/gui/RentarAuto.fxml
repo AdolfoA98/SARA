@@ -1,0 +1,491 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import java.net.URL?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+
+<GridPane id="gridPane" prefHeight="600.0" prefWidth="1000.0" xmlns:fx="http://javafx.com/fxml/1">
+    <stylesheets>
+        <URL value="@rentarauto.css"/>
+    </stylesheets>
+    
+    <HBox prefHeight="60"
+          prefWidth="1000"
+          styleClass="header"
+          GridPane.rowIndex="0">
+        
+        <JFXButton fx:id="botonRegresar"
+                   text="&lt;"
+                   prefWidth="50"
+                   prefHeight="80"
+                   onAction="#regresarVentana">
+            <font>
+                <Font size="24" />
+            </font>
+        </JFXButton>
+        
+        <StackPane HBox.hgrow="ALWAYS">
+            <ImageView fitWidth="100"
+                       fitHeight="80"
+                       StackPane.alignment="CENTER_LEFT">
+                
+                <image>
+                    <Image url="mx/fei/images/logo.png" />
+                </image>
+            
+            </ImageView>
+            
+            <Label text="SARA"
+                   StackPane.alignment="CENTER_LEFT">
+                <font>
+                    <Font size="32" />
+                </font>
+                <StackPane.margin>
+                    <Insets left="100"/>
+                </StackPane.margin>
+            </Label>
+            
+            <TextField StackPane.alignment="CENTER_RIGHT"
+                       maxWidth="200"
+                       promptText="Buscar...">
+                <StackPane.margin>
+                    <Insets right="145"/>
+                </StackPane.margin>
+            </TextField>
+            
+            <JFXButton fx:id="botonBuscar"
+                       StackPane.alignment="CENTER_RIGHT"
+                       >
+                
+                <StackPane.margin>
+                    <Insets right="110"/>
+                </StackPane.margin>
+                
+                <graphic>
+                    <ImageView fitHeight="18"
+                               fitWidth="20"
+                               preserveRatio="true">
+                        <image>
+                            <Image url="mx/fei/images/search.png"/>
+                        </image>
+                    </ImageView>
+                </graphic>
+            </JFXButton>
+            
+            <JFXButton fx:id="iniciarSesion"
+                       text="Iniciar Sesion"
+                       StackPane.alignment="CENTER_RIGHT"
+                       onAction="#cargarPaginaLogin">
+                <StackPane.margin>
+                    <Insets right="10" />
+                </StackPane.margin>
+            </JFXButton>
+        
+        </StackPane>
+    </HBox>
+    
+    <VBox GridPane.rowIndex="1"
+          styleClass="descriptionBox"
+          prefWidth="980"
+          prefHeight="520">
+        
+        <HBox>
+            <ImageView fx:id="imagenAuto"
+                       fitHeight="300"
+                       fitWidth="400">
+                
+                <image>
+                    <Image url="mx/fei/images/slider3.jpg"/>
+                </image>
+        
+                <HBox.margin>
+                    <Insets top="10" left="10"/>
+                </HBox.margin>
+            </ImageView>
+            
+            <VBox>
+                <Label fx:id="titulo"
+                       text="Titulo Auto">
+                
+                    <font>
+                        <Font size="32" />
+                    </font>
+                
+                    <VBox.margin>
+                        <Insets top="10" left="10"/>
+                    </VBox.margin>
+                </Label>
+            
+                <HBox>
+                    <Label fx:id="marca"
+                           text="Marca">
+                
+                        <font>
+                            <Font size="18" />
+                        </font>
+                
+                        <HBox.margin>
+                            <Insets top="5" left="10"/>
+                        </HBox.margin>
+                    </Label>
+                    
+                    <Label text="|">
+                
+                        <font>
+                            <Font size="18" />
+                        </font>
+                
+                        <HBox.margin>
+                            <Insets top="5" left="5"/>
+                        </HBox.margin>
+                    </Label>
+                    
+                    <Label fx:id="modelo"
+                           text="Modelo">
+                
+                        <font>
+                            <Font size="18" />
+                        </font>
+                
+                        <HBox.margin>
+                            <Insets top="5" left="5"/>
+                        </HBox.margin>
+                    </Label>
+                    
+                    <Label text="|">
+                
+                        <font>
+                            <Font size="18" />
+                        </font>
+                
+                        <HBox.margin>
+                            <Insets top="5" left="5"/>
+                        </HBox.margin>
+                    </Label>
+                    
+                    <Label fx:id="version"
+                           text="Versión">
+                
+                        <font>
+                            <Font size="18" />
+                        </font>
+                
+                        <HBox.margin>
+                            <Insets top="5" left="10"/>
+                        </HBox.margin>
+                    </Label>
+                </HBox>
+                
+                <HBox>
+                    <ImageView fitHeight="15"
+                               fitWidth="15">
+                        <image>
+                            <Image url="mx/fei/images/fan.png"/>
+                        </image>
+                    </ImageView>
+                
+                    <Label fx:id="textoAire"
+                           text="C/AC">
+                        <HBox.margin>
+                            <Insets left="5"/>
+                        </HBox.margin>
+                    </Label>
+            
+                    <ImageView fx:id="imagenTransmision"
+                               fitHeight="15"
+                               fitWidth="15">
+                        <image>
+                            <Image url="mx/fei/images/transmission.png"/>
+                        </image>
+                
+                        <HBox.margin>
+                            <Insets left="5"/>
+                        </HBox.margin>
+                    </ImageView>
+                
+                    <Label fx:id="textoTransmision"
+                           text="M">
+                        <HBox.margin>
+                            <Insets left="5"/>
+                        </HBox.margin>
+                    </Label>
+            
+                    <ImageView fitHeight="15"
+                               fitWidth="15">
+                        <image>
+                            <Image url="mx/fei/images/person.png"/>
+                        </image>
+                
+                        <HBox.margin>
+                            <Insets left="5"/>
+                        </HBox.margin>
+                    </ImageView>
+                
+                    <Label fx:id="pasajeros"
+                           text="5">
+                        <HBox.margin>
+                            <Insets left="5"/>
+                        </HBox.margin>
+                    </Label>
+            
+                    <ImageView fitHeight="15"
+                               fitWidth="15">
+                        <image>
+                            <Image url="mx/fei/images/car_door.png"/>
+                        </image>
+                
+                        <HBox.margin>
+                            <Insets left="5"/>
+                        </HBox.margin>
+                    </ImageView>
+                
+                    <Label fx:id="puertasAuto"
+                           text="4">
+                        <HBox.margin>
+                            <Insets left="5"/>
+                        </HBox.margin>
+                    </Label>
+                
+                    <VBox.margin>
+                        <Insets top="10" left="10"/>
+                    </VBox.margin>
+                </HBox>
+                <HBox>
+                    <ImageView fitHeight="25"
+                               fitWidth="30">
+                        <image>
+                            <Image url="mx/fei/images/kilometraje.png"/>
+                        </image>
+                
+                        <HBox.margin>
+                            <Insets left="5"/>
+                        </HBox.margin>
+                    </ImageView>
+                
+                    <Label fx:id="kilometraje"
+                           text="Kilometros por hora: 120">
+                        <HBox.margin>
+                            <Insets left="5"/>
+                        </HBox.margin>
+                        <font>
+                            <Font size="14" />
+                        </font>
+                    </Label>
+                    
+                    <VBox.margin>
+                        <Insets top="20" left="10"/>
+                    </VBox.margin>
+                </HBox>
+                <HBox>
+                    <ImageView fitHeight="25"
+                               fitWidth="30">
+                        <image>
+                            <Image url="mx/fei/images/fuel.png"/>
+                        </image>
+                
+                        <HBox.margin>
+                            <Insets left="5"/>
+                        </HBox.margin>
+                    </ImageView>
+                
+                    <Label fx:id="kilometrosLitro"
+                           text="Kilometros por litro: 120">
+                        <HBox.margin>
+                            <Insets left="5"/>
+                        </HBox.margin>
+                        <font>
+                            <Font size="14" />
+                        </font>
+                    </Label>
+                    
+                    <VBox.margin>
+                        <Insets top="10" left="10"/>
+                    </VBox.margin>
+                </HBox>
+                <HBox>
+                    <ImageView fitHeight="25"
+                               fitWidth="30">
+                        <image>
+                            <Image url="mx/fei/images/gps.png"/>
+                        </image>
+                
+                        <HBox.margin>
+                            <Insets left="5"/>
+                        </HBox.margin>
+                    </ImageView>
+                
+                    <Label fx:id="gps"
+                           text="¿Cuenta con GPS? Sí">
+                        <HBox.margin>
+                            <Insets left="5"/>
+                        </HBox.margin>
+                        <font>
+                            <Font size="14" />
+                        </font>
+                    </Label>
+                    
+                    <VBox.margin>
+                        <Insets top="20" left="10"/>
+                    </VBox.margin>
+                </HBox>
+                <HBox>
+                    <ImageView fitHeight="25"
+                               fitWidth="40">
+                        <image>
+                            <Image url="mx/fei/images/car_logo.png"/>
+                        </image>
+                
+                        <HBox.margin>
+                            <Insets left="5"/>
+                        </HBox.margin>
+                    </ImageView>
+                
+                    <Label fx:id="estado"
+                           text="Estado: Muy buen estado">
+                        <HBox.margin>
+                            <Insets left="5"/>
+                        </HBox.margin>
+                        <font>
+                            <Font size="14" />
+                        </font>
+                    </Label>
+                    
+                    <VBox.margin>
+                        <Insets top="20" left="10"/>
+                    </VBox.margin>
+                </HBox>
+            </VBox>
+            
+            <VBox>
+                <StackPane styleClass="disponibilityBox"
+                       prefWidth="300"
+                       maxHeight="80">
+                
+                    <Label fx:id="disponibilidad"
+                           text="Disponible">
+                        <font>
+                            <Font size="28"/>
+                        </font>
+                    </Label>
+                
+                    <VBox.margin>
+                        <Insets top="20" left="20" right="10"/>
+                    </VBox.margin>
+                    
+                </StackPane>
+                <ImageView fitWidth="300"
+                           fitHeight="250">
+                    <image>
+                        <Image url="mx/fei/images/mapa.png"/>
+                    </image>
+            
+                    <VBox.margin>
+                        <Insets left="20" top="5" bottom="10" right="10"/>
+                    </VBox.margin>
+                </ImageView>
+            </VBox>
+        </HBox>
+        
+        <HBox>
+            <VBox prefWidth="550"
+                  prefHeight="300">
+                <Label text="Descripción: ">
+                    <font>
+                        <Font size="16"/>
+                    </font>
+                </Label>
+                <Label fx:id="descripcion"
+                       text="Lipsum oer jagt han karme tu les">
+                    
+                    <font>
+                        <Font size="14"/>
+                    </font>
+                    
+                </Label>
+                
+                <HBox.margin>
+                    <Insets top="10" left="10" bottom="10" right="10"/>
+                </HBox.margin>
+            </VBox>
+            
+            <StackPane prefWidth="450"
+               maxHeight="300"
+               HBox.hgrow="ALWAYS"
+               styleClass="rentBox">
+                <VBox StackPane.alignment="TOP_LEFT">
+                    <Label text="Precio por día: ">
+            
+                        <font>
+                            <Font size="20"/>
+                        </font>
+            
+                        <VBox.margin>
+                            <Insets top="5" left="5"/>
+                        </VBox.margin>
+            
+                    </Label>
+            
+                    <Label fx:id="precioDia"
+                           text="MXN $279">
+            
+                        <font>
+                            <Font size="28"/>
+                        </font>
+            
+                        <VBox.margin>
+                            <Insets top="5" left="5"/>
+                        </VBox.margin>
+            
+                    </Label>
+            
+                    <Label fx:id="precioTotal"
+                           text="Total: MXN $$$">
+            
+                        <font>
+                            <Font size="18"/>
+                        </font>
+            
+                        <VBox.margin>
+                            <Insets top="5" left="5"/>
+                        </VBox.margin>
+            
+                    </Label>
+            
+                    <StackPane.margin>
+                        <Insets left="15" top="5" bottom="5"/>
+                    </StackPane.margin>
+                </VBox>
+        
+                <JFXButton fx:id="botonRentar"
+                           text="Ver más"
+                           prefHeight="70"
+                           prefWidth="150"
+                           StackPane.alignment="CENTER_RIGHT"
+                           onAction="#cargarVenta">
+            
+                    <StackPane.margin>
+                        <Insets right="10"/>
+                    </StackPane.margin>
+                </JFXButton>
+        
+                <HBox.margin>
+                    <Insets top="10" bottom="10"/>
+                </HBox.margin>
+            </StackPane>
+        </HBox>
+        
+        <GridPane.margin>
+            <Insets top="20" bottom="20" left="20" right="20"/>
+        </GridPane.margin>
+        
+    </VBox>
+    
+</GridPane>

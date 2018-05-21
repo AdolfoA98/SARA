@@ -5,3 +5,23 @@
 .mainFxmlClass {
 
 }
+
+.header{
+    -fx-background-color:#2E7D32;
+}
+
+.loginBox{
+    -fx-background-color:#FAFAFA;
+}
+
+#GridPane{
+    -fx-background-color: #212121;
+}
+
+#botonAceptar, #botonCancelar{
+    -fx-background-color: #81C784;
+}
+
+#botonRegresar{
+    -fx-text-fill:#AED581;
+}

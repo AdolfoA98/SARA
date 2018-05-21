@@ -1,0 +1,24 @@
+/*
+ * Empty Stylesheet file.
+ */
+
+.mainFxmlClass {
+
+}
+
+.header{
+    -fx-background-color:#2E7D32;
+}
+
+#GridPane{
+    -fx-background-color: #212121;
+}
+
+#botonBuscar{
+    -fx-background-color: #FFFFFF;
+    -fx-background-radius: 10em;
+}
+
+#iniciarSesion{
+    -fx-background-color: #81C784;
+}

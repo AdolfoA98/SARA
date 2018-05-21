@@ -1,16 +1,85 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import com.jfoenix.controls.JFXTextField?>
+<?import com.jfoenix.controls.JFXPasswordField?>
+<?import com.jfoenix.controls.JFXButton?>
 <?import java.lang.*?>
 <?import java.net.*?>
 <?import java.util.*?>
 <?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.text.Font?>
 
-<GridPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" styleClass="mainFxmlClass" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mx.fei.gui.LoginController">
+<GridPane id="GridPane" prefHeight="380.0" prefWidth="500.0" styleClass="mainFxmlClass" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mx.fei.gui.LoginController">
+    
     <stylesheets>
         <URL value="@login.css"/>
     </stylesheets>
     
+    <HBox styleClass="header"
+          prefWidth="500"
+          prefHeight="80">
+        <JFXButton fx:id="botonRegresar"
+                   text="&lt;"
+                   prefWidth="50"
+                   prefHeight="80"
+                   onAction="#cerrarVentana">
+            <font>
+                <Font size="20" />
+            </font>
+        </JFXButton>
+        
+    </HBox>
     
+    <VBox styleClass="loginBox"
+          GridPane.rowIndex="1"
+          prefWidth="440"
+          prefHeight="360">
+        <Label text="Iniciar Sesión">
+            <font>
+                <Font size="26"/>
+            </font>
+            <VBox.margin>
+                <Insets top="50" left="30" right="30"/>
+            </VBox.margin>
+        </Label>
+        <JFXTextField promptText="Nombre de Usuario">
+            <VBox.margin>
+                <Insets top="50" left="30" right="30"/>
+            </VBox.margin>
+        </JFXTextField>
+        <JFXPasswordField styleClass="campoContrasena"
+                      promptText="Contraseña">
+            <VBox.margin>
+                <Insets top="30" left="30" right="30"/>
+            </VBox.margin>
+        </JFXPasswordField>
+        <HBox>
+            <JFXButton fx:id="botonAceptar"
+                   text="Aceptar"
+                   prefWidth="100"
+                   prefHeight="30">
+            
+            </JFXButton>
+            <JFXButton fx:id="botonCancelar"
+                   text="Cancelar"
+                   prefWidth="100"
+                   prefHeight="30">
+                <HBox.margin>
+                    <Insets left="10"/>
+                </HBox.margin>
+            </JFXButton>
+            
+            <VBox.margin>
+                <Insets top="40" left="145" right="145"/>
+            </VBox.margin>
+        </HBox>
+        <GridPane.margin>
+            <Insets left="30" right="30" bottom="20" top="20"/>
+        </GridPane.margin>
+    </VBox>
 </GridPane>

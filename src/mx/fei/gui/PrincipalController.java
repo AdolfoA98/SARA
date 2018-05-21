@@ -5,6 +5,7 @@
  */
 package mx.fei.gui;
 
+import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXComboBox;
 import java.io.IOException;
 import java.net.URL;
@@ -13,7 +14,6 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javafx.animation.FadeTransition;
 import javafx.application.Platform;
-import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -32,6 +32,14 @@ import javafx.util.Duration;
  * @author adolf
  */
 public class PrincipalController implements Initializable {
+    
+    public static void stageController(Stage stage){
+        stage.setResizable(false);
+        stage.setOnCloseRequest((WindowEvent t) -> {
+            Platform.exit();
+            System.exit(0);
+        });
+    }
 
     @FXML
     private ImageView slider;
@@ -39,18 +47,9 @@ public class PrincipalController implements Initializable {
     @FXML
     private JFXComboBox<Label> flotillas;
     
+    @FXML
+    private JFXButton botonBuscar;
     
-    
-    public static void stageController(Stage stage){
-        stage.setResizable(false);
-        stage.setOnCloseRequest(new EventHandler<WindowEvent>() {
-            @Override
-            public void handle(WindowEvent t) {
-                Platform.exit();
-                System.exit(0);
-            }
-        });
-    }
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -66,12 +65,37 @@ public class PrincipalController implements Initializable {
     public void cargarPaginaLogin(){
         Stage stage = new Stage();
         try {
-            Parent root = FXMLLoader.load(getClass().getResource("PrincipalAdministrador.fxml"));
+            Parent root = FXMLLoader.load(getClass().getResource("Login.fxml"));
             
             Scene scene = new Scene(root);
             
             stage.setScene(scene);
+            stage.setResizable(false);
+            stage.getIcons().add(new Image("mx/fei/images/logo.png"));
             stage.show();
+        } catch (IOException ex) {
+            Logger.getLogger(PrincipalController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+    
+    @FXML
+    public void cargarPaginaAutos(){
+        Stage actualStage = (Stage) botonBuscar.getScene().getWindow();
+        Stage stage = new Stage();
+        try {
+            Parent root = FXMLLoader.load(getClass().getResource("PrincipalAutos.fxml"));
+            
+            Scene scene = new Scene(root);
+            
+            stage.setScene(scene);
+            stage.setResizable(false);
+            stage.getIcons().add(new Image("mx/fei/images/logo.png"));
+            stage.setOnCloseRequest((WindowEvent t) -> {
+                Platform.exit();
+                System.exit(0);
+            });
+            stage.show();
+            actualStage.close();
         } catch (IOException ex) {
             Logger.getLogger(PrincipalController.class.getName()).log(Level.SEVERE, null, ex);
         }

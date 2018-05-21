@@ -64,7 +64,8 @@
             </TextField>
             
             <JFXButton fx:id="botonBuscar"
-                       StackPane.alignment="CENTER_RIGHT">
+                       StackPane.alignment="CENTER_RIGHT"
+                       onAction="#cargarPaginaAutos">
                 
                 <StackPane.margin>
                     <Insets right="110"/>
@@ -165,7 +166,8 @@
                        text="Rentar Auto"
                        fx:id="botonRentar"
                        prefHeight="40"
-                       prefWidth="180">
+                       prefWidth="180"
+                       onAction="#cargarPaginaAutos">
                 <StackPane.margin>
                     <Insets top="80" bottom="20" right="20"/>
                 </StackPane.margin>

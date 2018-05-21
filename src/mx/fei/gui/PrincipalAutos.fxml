@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.layout.*?>
+
+<GridPane id="GridPane" prefHeight="600.0" prefWidth="900.0" styleClass="mainFxmlClass" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mx.fei.gui.PrincipalAutosController">
+    
+    <stylesheets>
+        <URL value="@principalautos.css"/>
+    </stylesheets>
+    
+    <HBox prefHeight="60"
+          prefWidth="900"
+          styleClass="header"
+          GridPane.rowIndex="0">
+        
+        <JFXButton fx:id="botonRegresar"
+                   text="&lt;"
+                   prefWidth="50"
+                   prefHeight="80"
+                   onAction="#regresarVentana">
+            <font>
+                <Font size="24" />
+            </font>
+        </JFXButton>
+        
+        <StackPane HBox.hgrow="ALWAYS">
+            <ImageView fitWidth="100"
+                       fitHeight="80"
+                       StackPane.alignment="CENTER_LEFT">
+                
+                <image>
+                    <Image url="mx/fei/images/logo.png" />
+                </image>
+            
+            </ImageView>
+            
+            <Label text="SARA"
+                   StackPane.alignment="CENTER_LEFT">
+                <font>
+                    <Font size="32" />
+                </font>
+                <StackPane.margin>
+                    <Insets left="100"/>
+                </StackPane.margin>
+            </Label>
+            
+            <TextField StackPane.alignment="CENTER_RIGHT"
+                       maxWidth="200"
+                       promptText="Buscar...">
+                <StackPane.margin>
+                    <Insets right="145"/>
+                </StackPane.margin>
+            </TextField>
+            
+            <JFXButton fx:id="botonBuscar"
+                       StackPane.alignment="CENTER_RIGHT"
+                       >
+                
+                <StackPane.margin>
+                    <Insets right="110"/>
+                </StackPane.margin>
+                
+                <graphic>
+                    <ImageView fitHeight="18"
+                               fitWidth="20"
+                               preserveRatio="true">
+                        <image>
+                            <Image url="mx/fei/images/search.png"/>
+                        </image>
+                    </ImageView>
+                </graphic>
+            </JFXButton>
+            
+            <JFXButton fx:id="iniciarSesion"
+                       text="Iniciar Sesion"
+                       StackPane.alignment="CENTER_RIGHT"
+                       onAction="#cargarPaginaLogin">
+                <StackPane.margin>
+                    <Insets right="10" />
+                </StackPane.margin>
+            </JFXButton>
+        
+        </StackPane>
+    </HBox>
+    
+    <ListView fx:id="listaAutos"
+              GridPane.rowIndex="1"
+              prefWidth="900"
+              prefHeight="530">
+        
+        <GridPane.margin>
+            <Insets left="10" top="10" bottom="10" right="10"/>
+        </GridPane.margin>
+        
+    </ListView>
+    
+</GridPane>

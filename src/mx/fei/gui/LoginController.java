@@ -5,9 +5,13 @@
  */
 package mx.fei.gui;
 
+import com.jfoenix.controls.JFXButton;
 import java.net.URL;
 import java.util.ResourceBundle;
+import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.stage.Stage;
 
 /**
  * FXML Controller class
@@ -16,12 +20,18 @@ import javafx.fxml.Initializable;
  */
 public class LoginController implements Initializable {
 
-    /**
-     * Initializes the controller class.
-     */
+    @FXML
+    private JFXButton botonRegresar;
+    
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
-    }    
+    }
+
+    @FXML
+    public void cerrarVentana(ActionEvent evento){
+        Stage stage = (Stage) botonRegresar.getScene().getWindow();
+        stage.close();
+    }
     
 }
