@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<GridPane fx:id="gridPane" fx:controller="mx.fei.gui.PEscogerPropietarioController" 
+    xmlns:fx="http://javafx.com/fxml" alignment="center" hgap="10" vgap="10">
+<padding><Insets top="25" right="25" bottom="10" left="25"/></padding>
+
+<stylesheets>
+        <URL value="@pescogerpropietario.css" />
+ </stylesheets>
+ 
+<Text text="Propietario"
+    GridPane.columnIndex="0" GridPane.rowIndex="1"/>
+<HBox spacing="10" alignment="bottom_right" 
+        GridPane.columnIndex="0" GridPane.rowIndex="1" GridPane.halignment="RIGHT">
+        <Button fx:id="BagregarPropietario" text="Añadir Propietario" onAction="#cargarPaginaAgregarPropietario"/>
+    </HBox>  
+
+<ListView fx:id="listaUsuarios" GridPane.columnIndex="0" GridPane.rowIndex="2" prefWidth="200" prefHeight="400">
+    
+</ListView>
+
+
+<HBox spacing="10" alignment="bottom_right"
+    GridPane.columnIndex="0" GridPane.rowIndex="4">
+    <Button fx:id="BagregarAuto" text="Aceptar"  onAction="#cargarPaginaAgregarAuto" >
+        <GridPane.margin>
+            <Insets left="140"  />
+        </GridPane.margin>
+    </Button>   
+</HBox>
+
+ <TextField fx:id="txtPropietario"
+        GridPane.columnIndex="0" GridPane.rowIndex="3" alignment="bottom_left" />
+</GridPane>

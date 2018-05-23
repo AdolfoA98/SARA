@@ -1,0 +1,32 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 23/05/2018, 01:25:59 PM
+    Author     : jethr
+*/
+
+#txtPropietario{
+    -fx-background-color: #FAFAFA;
+    -fx-background-radius: 10em;
+}
+    
+#listaUsuarios{
+   
+}
+    
+#BagregarPropietario{
+    -fx-background-color: #FAFAFA;
+    -fx-background-radius: 8em;
+}
+    
+#BagregarAuto{
+    -fx-background-color: #FAFAFA;
+    -fx-background-radius: 8em;
+}
+
+#gridPane {
+    -fx-background-color: #ECEFF1;
+}

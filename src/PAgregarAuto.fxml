@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+
+<GridPane fx:id="gridPane" fx:controller="mx.fei.gui.PAgregarAuto" 
+    xmlns:fx="http://javafx.com/fxml" alignment="center" hgap="10" vgap="10">
+<padding><Insets top="25" right="25" bottom="10" left="25"/></padding>
+    <stylesheets>
+        <URL value="@pagregarauto.css" />
+    </stylesheets>
+    
+    <Label text="No motor:"
+        GridPane.columnIndex="0" GridPane.rowIndex="1"/>
+ 
+    <TextField fx:id="txtNoMotor"
+        GridPane.columnIndex="1" GridPane.rowIndex="1" GridPane.columnSpan="4" maxWidth="200"/>
+ 
+    <Label text="¿Está climatizado?:"
+        GridPane.columnIndex="0" GridPane.rowIndex="2"/>
+    <ComboBox  fx:id="boxClima"  GridPane.columnIndex="1" GridPane.rowIndex="2" maxWidth="70"/>                
+          
+
+    
+    <Label text="Transmision:"
+        GridPane.columnIndex="0" GridPane.rowIndex="3"/>
+   
+    <ComboBox  fx:id="boxTransmision"  GridPane.columnIndex="1" GridPane.rowIndex="3" maxWidth="200"/> 
+    
+    <Label text="No. Pasajeros"
+        GridPane.columnIndex="0" GridPane.rowIndex="4"/>
+    <TextField fx:id="txtNoPasajeros"
+        GridPane.columnIndex="1" GridPane.rowIndex="4" GridPane.columnSpan="4" maxWidth="200"/>
+    
+    <Label text="No. Puertas"
+        GridPane.columnIndex="0" GridPane.rowIndex="5"/>
+    <TextField fx:id="txtNoPuertas"
+        GridPane.columnIndex="1" GridPane.rowIndex="5" GridPane.columnSpan="4" maxWidth="200"/>
+    
+    <Label text="Marca"
+        GridPane.columnIndex="0" GridPane.rowIndex="6"/>
+    <TextField fx:id="txtMarca"
+        GridPane.columnIndex="1" GridPane.rowIndex="6" GridPane.columnSpan="4" maxWidth="200"/>
+    
+    <Label text="Modelo"
+        GridPane.columnIndex="0" GridPane.rowIndex="7"/>
+    <TextField fx:id="txtModelo"
+        GridPane.columnIndex="1" GridPane.rowIndex="7" GridPane.columnSpan="4" maxWidth="200"/>
+    
+    <Label text="Version"
+        GridPane.columnIndex="0" GridPane.rowIndex="8"/>
+    <TextField fx:id="txtVersion"
+        GridPane.columnIndex="1" GridPane.rowIndex="8" GridPane.columnSpan="4" maxWidth="200"/>
+    
+    <Label text="Kilometraje"
+        GridPane.columnIndex="0" GridPane.rowIndex="9"/>
+    <TextField fx:id="txtKilometraje"
+        GridPane.columnIndex="1" GridPane.rowIndex="9" GridPane.columnSpan="4" maxWidth="200"/>
+    
+    <Label text="Km/L"
+        GridPane.columnIndex="0" GridPane.rowIndex="10"/>
+    <TextField fx:id="txtKml"
+        GridPane.columnIndex="1" GridPane.rowIndex="10"  maxWidth="200"/>
+    
+    <Label text="GPS:"
+        GridPane.columnIndex="0" GridPane.rowIndex="11"/>
+    <ComboBox  fx:id="boxGps"  GridPane.columnIndex="1" GridPane.rowIndex="11" maxWidth="200"/> 
+
+    <Label text="Descripcion:"
+        GridPane.columnIndex="0" GridPane.rowIndex="12"
+        GridPane.valignment="TOP"/>
+    <TextArea fx:id="txtDescripcion"
+        GridPane.columnIndex="1" GridPane.rowIndex="12" maxWidth="200" maxHeight="80"/>
+    
+    <Label text="Precio/Dia:"
+        GridPane.columnIndex="0" GridPane.rowIndex="13"/>
+    <TextField fx:id="txtPrecioDia"
+        GridPane.columnIndex="1" GridPane.rowIndex="13" maxWidth="200"/>
+    
+    <Label text="Estado:"
+        GridPane.columnIndex="0" GridPane.rowIndex="14"/>
+    <ComboBox  fx:id="boxEstado"  GridPane.columnIndex="1" GridPane.rowIndex="14" maxWidth="70"/> 
+    
+     <Label text="Disponible:"
+        GridPane.columnIndex="0" GridPane.rowIndex="15"/>
+    <ComboBox  fx:id="boxDisponible"  GridPane.columnIndex="1" GridPane.rowIndex="15" maxWidth="70"/> 
+    
+    
+        
+    <HBox spacing="10" alignment="bottom_right" 
+        GridPane.columnIndex="1" GridPane.rowIndex="16">
+        <Button fx:id="bAgregar" text="Agregar" onAction="#crearVehiculo"/>
+    </HBox>
+    
+    <HBox  alignment="bottom_center" 
+        GridPane.columnIndex="1" GridPane.rowIndex="16">
+        <Button fx:id="bCancelar" text="Cancelar" onAction="#cargarPaginaEscogerPropietario"/>
+    </HBox>     
+    
+</GridPane>
