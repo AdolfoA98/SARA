@@ -1,0 +1,101 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 22/05/2018, 04:13:10 PM
+    Author     : jethr
+*/
+
+#boxClima{
+    -fx-background-color: #FAFAFA;
+    -fx-background-radius: 15em;
+}
+
+#boxTransmision{
+    -fx-background-color: #FAFAFA;
+    -fx-background-radius: 15em;
+}
+
+#boxGps{
+    -fx-background-color: #FAFAFA;
+    -fx-background-radius: 15em;
+}
+
+#boxDisponible{
+    -fx-background-color: #FAFAFA;
+    -fx-background-radius: 15em;
+}
+
+#boxEstado{
+    -fx-background-color: #FAFAFA;
+    -fx-background-radius: 15em;
+}
+
+#txtNoMotor{
+    -fx-background-color: #FAFAFA;
+    -fx-background-radius: 15em;
+}
+      
+#txtNoPasajeros{
+    -fx-background-color: #FAFAFA;
+    -fx-background-radius: 15em;
+}
+    
+#txtNoPuertas{
+   -fx-background-color: #FAFAFA;
+    -fx-background-radius: 15em;
+}
+    
+#txtMarca{
+   -fx-background-color: #FAFAFA;
+    -fx-background-radius: 15em;
+}
+
+#txtModelo{
+    -fx-background-color: #FAFAFA;
+    -fx-background-radius: 15em;
+}
+    
+#txtVersion{
+    -fx-background-color: #FAFAFA;
+    -fx-background-radius: 15em;
+}
+    
+#txtKilometraje{
+    -fx-background-color: #FAFAFA;
+    -fx-background-radius: 15em;
+}
+    
+#txtKml{
+    -fx-background-color: #FAFAFA;
+    -fx-background-radius: 15em;
+}
+    
+#txtDescripcion {
+    -fx-background-color: #FAFAFA;
+    
+}
+
+#txtPrecioDia {
+    -fx-background-color: #FAFAFA;
+    -fx-background-radius: 15em;
+}
+
+#gridPane {
+    -fx-background-color: #ECEFF1;
+    
+}
+
+#bAgregar {
+    -fx-background-color: #FAFAFA;
+    -fx-background-radius: 8em;
+}
+  
+#bCancelar {
+    -fx-background-color: #FAFAFA;
+    -fx-background-radius: 8em;
+}
+  
+
