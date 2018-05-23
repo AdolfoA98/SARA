@@ -83,8 +83,8 @@
         <Button fx:id="Bagregar" text="Agregar" onAction="#agregarPropietario"/>
     </HBox>
     
-    <HBox alignment="bottom_left" 
-        GridPane.columnIndex="1" GridPane.rowIndex="16">
+    <HBox alignment="bottom_right" 
+        GridPane.columnIndex="0" GridPane.rowIndex="16">
         <Button fx:id="bCancelar" text="Cancerlar" onAction="#cargarPaginaEscogerPropietario"/>
     </HBox>
 

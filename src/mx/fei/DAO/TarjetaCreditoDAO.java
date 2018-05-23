@@ -3,14 +3,17 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package sistema.administracion.vehiculos;
+package mx.fei.DAO;
 
+import mx.fei.domain.FacturaDAO;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.text.SimpleDateFormat;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import mx.fei.DS.DB;
+import mx.fei.domain.TarjetaCredito;
 
 /**
  *
@@ -26,7 +29,7 @@ public class TarjetaCreditoDAO implements ITarjetaCreditoDAO{
     
     @Override
     public boolean agregarTarjetaCredito(TarjetaCredito credit, String rfc){
-        connection = DataBase.getDataBaseConnection();
+        connection = DB.getDataBaseConnection();
         query = "insert into factura (idTarjetaCredito, numeroTarjeta, cuatroDigitos, mesCaducidad, anoCaducidad, ccv, nombreTarjeta, Usuario_rfc )"
               + "values (?, ?, ?, ?, ?, ?, ?, ?) ";
         try {
@@ -35,7 +38,7 @@ public class TarjetaCreditoDAO implements ITarjetaCreditoDAO{
             statement.setInt(2, credit.getNumeroTarjeta());
             statement.setString(3, credit.getCuatroDigitos());
             statement.setInt(4, credit.getMesCaducidad());
-            statement.setInt(5, credit.getAnoCaducidad());
+            statement.setInt(5, credit.getAnioCaducidad());
             statement.setInt(6, credit.getCcv());
             statement.setString(7, credit.getNombreTarjeta());
             statement.setString(8, rfc);

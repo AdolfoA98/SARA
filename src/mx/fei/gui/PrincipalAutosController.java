@@ -55,6 +55,7 @@ public class PrincipalAutosController implements Initializable {
         //autos = vehiculoDao.obtenerVehiculos();
         vehiculoDao = new VehiculoDAO();
         autos = vehiculoDao.obtenerVehiculos();
+        System.out.println(autos.get(0).getThumbnail());
         observableAutos = FXCollections.observableArrayList(autos);
         
         listaAutos.setItems(observableAutos);

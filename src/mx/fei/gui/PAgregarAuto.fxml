@@ -96,8 +96,8 @@
         <Button fx:id="bAgregar" text="Agregar" onAction="#crearVehiculo"/>
     </HBox>
     
-    <HBox  alignment="bottom_center" 
-        GridPane.columnIndex="1" GridPane.rowIndex="16">
+    <HBox  alignment="bottom_right" 
+        GridPane.columnIndex="0" GridPane.rowIndex="16">
         <Button fx:id="bCancelar" text="Cancelar" onAction="#cargarPaginaEscogerPropietario"/>
     </HBox>     
     

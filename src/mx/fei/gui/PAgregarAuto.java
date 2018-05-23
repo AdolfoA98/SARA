@@ -124,7 +124,7 @@ public class PAgregarAuto implements Initializable {
        public void cargarPaginaEscogerPropietario() {
          Stage stage = new Stage();
          try {
-             Parent root = FXMLLoader.load(getClass().getResource("PEscogerPropietario.fxml"));
+             Parent root = FXMLLoader.load(getClass().getResource("PrincipalAutos.fxml"));
              Scene scene = new Scene(root);
    
      

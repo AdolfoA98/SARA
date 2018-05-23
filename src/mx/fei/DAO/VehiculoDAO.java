@@ -89,6 +89,7 @@ public class VehiculoDAO implements IVehiculoDAO {
             while(result.next()){
                 Vehiculo vehiculo = new Vehiculo();
                 vehiculo.setNoMotor(result.getString("noMotor"));
+                System.out.println("No pasa");
                 if("si".equals(result.getString("climatizado"))){
                     vehiculo.setClimatizado(1);
                 }else{
@@ -99,6 +100,7 @@ public class VehiculoDAO implements IVehiculoDAO {
                 }else{
                     vehiculo.setTransmision(2);
                 }
+                System.out.println("Pasa");
                 vehiculo.setNumPasajeros(result.getInt("numPasajeros"));
                 vehiculo.setNumPuertas(result.getInt("numPuertas"));
                 vehiculo.setMarca(result.getString("marca"));

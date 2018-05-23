@@ -86,6 +86,7 @@ public class AutoListItemController{
     public void setInformacion(Vehiculo vehiculo){
         
         this.vehiculo = vehiculo;
+        System.out.println(vehiculo.getDescripcion());
         imagenAuto.setImage(new Image(vehiculo.getThumbnail()));
         titulo.setText(vehiculo.getDescripcion());
         marca.setText(vehiculo.getMarca());
