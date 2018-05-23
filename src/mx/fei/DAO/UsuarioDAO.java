@@ -41,6 +41,7 @@ public class UsuarioDAO implements IUsuarioDAO {
             while(result.next()){
                 Usuario usuario = new Usuario();
                 usuario.setNombre(result.getString("nombre"));
+                usuario.setRfc(result.getString("rfc"));
                 listaUsuarios.add(usuario);
             }
         }catch (SQLException ex) {
@@ -62,10 +63,10 @@ public class UsuarioDAO implements IUsuarioDAO {
     }
 
     @Override
-    public boolean agregarCliente(Usuario cliente, String tarjetaCredito ) {
+    public boolean agregarCliente(Usuario cliente) {
       
         boolean agregado = false;
-        query = "insert into agendadb.contacto values (?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
+        query = "insert into usuario values (?,?,?,?,?,?,?,?,?,?,?,?)";
         connection = DB.getDataBaseConnection();
         try {
             PreparedStatement statement = connection.prepareStatement(query);
@@ -81,7 +82,7 @@ public class UsuarioDAO implements IUsuarioDAO {
             statement.setString(10, cliente.getEmail());
             statement.setString(11, cliente.getTelefono());
             statement.setString(12, cliente.getContrasena());
-            statement.setString(13, tarjetaCredito);
+            
             statement.execute();
             agregado = true;
         }catch (SQLException ex) {

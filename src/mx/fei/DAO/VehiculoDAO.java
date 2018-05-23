@@ -5,6 +5,7 @@
  */
 package mx.fei.DAO;
 
+import com.mysql.jdbc.exceptions.MySQLIntegrityConstraintViolationException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -32,10 +33,10 @@ public class VehiculoDAO implements IVehiculoDAO {
     private Connection connection;
 
     @Override
-    public boolean agregarAuto(Vehiculo vehiculo, String rfcCliente, String flotilla, String matriculaAdmi) {
+    public boolean agregarAuto(Vehiculo vehiculo, String rfcCliente, String flotilla) {
      
        boolean agregado = false;
-       query = "insert into vehiculo value (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
+       query = "insert into vehiculo value (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
        connection = DB.getDataBaseConnection();
        
        
@@ -60,9 +61,10 @@ public class VehiculoDAO implements IVehiculoDAO {
            statement.setDouble(16, vehiculo.getPrecioDia());
            statement.setString(17, vehiculo.getThumbnail());
            statement.setString(18, rfcCliente);
-           statement.setString(19, matriculaAdmi);
            
            
+           statement.execute();
+           agregado=true;
        } catch (SQLException ex) {
             Logger.getLogger(VehiculoDAO.class.getName()).log(Level.SEVERE, null, ex);
        } finally {
@@ -87,7 +89,37 @@ public class VehiculoDAO implements IVehiculoDAO {
             while(result.next()){
                 Vehiculo vehiculo = new Vehiculo();
                 vehiculo.setNoMotor(result.getString("noMotor"));
-               
+                if("si".equals(result.getString("climatizado"))){
+                    vehiculo.setClimatizado(1);
+                }else{
+                    vehiculo.setClimatizado(2);
+                }
+                if("manual".equals(result.getString("transmision"))){
+                    vehiculo.setTransmision(1);
+                }else{
+                    vehiculo.setTransmision(2);
+                }
+                vehiculo.setNumPasajeros(result.getInt("numPasajeros"));
+                vehiculo.setNumPuertas(result.getInt("numPuertas"));
+                vehiculo.setMarca(result.getString("marca"));
+                vehiculo.setModelo(result.getString("modelo"));
+                vehiculo.setVersion(result.getString("version"));
+                vehiculo.setKilometraje(result.getDouble("kilometraje"));
+                vehiculo.setKml(result.getDouble("kml"));
+                if("si".equals(result.getString("gps"))){
+                    vehiculo.setGps(1);
+                }else{
+                    vehiculo.setGps(2);
+                }
+                vehiculo.setDescripcion(result.getString("descripcion"));
+                vehiculo.setEstado(Integer.parseInt(result.getString("estado")));
+                if("disponible".equals(result.getString("disponibilidad"))){
+                    vehiculo.setDisponibilidad(1);
+                }else{
+                    vehiculo.setDisponibilidad(2);
+                }
+                vehiculo.setPrecioDia(result.getDouble("precioDia"));
+                vehiculo.setThumbnail(result.getString("Thumbnail"));
                 listaVehiculos.add(vehiculo);
             }
         }catch (SQLException ex) {
@@ -95,6 +127,7 @@ public class VehiculoDAO implements IVehiculoDAO {
         }finally {
             DB.closeConnection();
         }
+        System.out.println(listaVehiculos.get(0));
         return listaVehiculos;
     }
     

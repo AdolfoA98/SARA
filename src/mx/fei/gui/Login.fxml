@@ -62,13 +62,15 @@
             <JFXButton fx:id="botonAceptar"
                    text="Aceptar"
                    prefWidth="100"
-                   prefHeight="30">
+                   prefHeight="30"
+                   onAction="#cargarPAdministrador">
             
             </JFXButton>
             <JFXButton fx:id="botonCancelar"
                    text="Cancelar"
                    prefWidth="100"
-                   prefHeight="30">
+                   prefHeight="30"
+                   onAction="#cerrarVentana">
                 <HBox.margin>
                     <Insets left="10"/>
                 </HBox.margin>

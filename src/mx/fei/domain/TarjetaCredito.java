@@ -3,72 +3,76 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package sistema.administracion.vehiculos;
+package mx.fei.domain;
 
 /**
  *
- * @author dell
+ * @author jethr
  */
 public class TarjetaCredito {
-    private String idTarjetaCredito;
+    
+    private String idTarjeta;
     private int numeroTarjeta;
     private String cuatroDigitos;
     private int mesCaducidad;
-    private int anoCaducidad;
+    private int anioCaducidad;
     private int ccv;
     private String nombreTarjeta;
+    
+    TarjetaCredito() {
+        
+    }
 
-    public String getIdTarjetaCredito() {
-        return idTarjetaCredito;
+    public String getIdTarjeta() {
+        return idTarjeta;
+    }
+
+    public void setIdTarjeta(String idTarjeta) {
+        this.idTarjeta = idTarjeta;
     }
 
     public int getNumeroTarjeta() {
         return numeroTarjeta;
     }
 
-    public String getCuatroDigitos() {
-        return cuatroDigitos;
-    }
-
-    public int getMesCaducidad() {
-        return mesCaducidad;
-    }
-
-    public int getAnoCaducidad() {
-        return anoCaducidad;
-    }
-
-    public int getCcv() {
-        return ccv;
-    }
-
-    public String getNombreTarjeta() {
-        return nombreTarjeta;
-    }
-
-    
-    public void setIdTarjetaCredito(String idTarjetaCredito) {
-        this.idTarjetaCredito = idTarjetaCredito;
-    }
-
     public void setNumeroTarjeta(int numeroTarjeta) {
         this.numeroTarjeta = numeroTarjeta;
+    }
+
+    public String getCuatroDigitos() {
+        return cuatroDigitos;
     }
 
     public void setCuatroDigitos(String cuatroDigitos) {
         this.cuatroDigitos = cuatroDigitos;
     }
 
+    public int getMesCaducidad() {
+        return mesCaducidad;
+    }
+
     public void setMesCaducidad(int mesCaducidad) {
         this.mesCaducidad = mesCaducidad;
     }
 
-    public void setAnoCaducidad(int anoCaducidad) {
-        this.anoCaducidad = anoCaducidad;
+    public int getAnioCaducidad() {
+        return anioCaducidad;
+    }
+
+    public void setAnioCaducidad(int anioCaducidad) {
+        this.anioCaducidad = anioCaducidad;
+    }
+
+    public int getCcv() {
+        return ccv;
     }
 
     public void setCcv(int ccv) {
         this.ccv = ccv;
+    }
+
+    public String getNombreTarjeta() {
+        return nombreTarjeta;
     }
 
     public void setNombreTarjeta(String nombreTarjeta) {

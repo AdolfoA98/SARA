@@ -2,6 +2,7 @@
 
 <?import com.jfoenix.controls.JFXButton?>
 <?import com.jfoenix.controls.JFXCheckBox?>
+<?import com.jfoenix.controls.JFXDialogLayout?>
 <?import java.lang.*?>
 <?import java.net.*?>
 <?import java.util.*?>
@@ -11,10 +12,16 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.Font?>
 
-<VBox id="vBox" prefHeight="550.0" prefWidth="500.0" styleClass="mainFxmlClass" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mx.fei.gui.RentaController">
+<StackPane fx:id="stack"
+           prefHeight="350"
+           prefWidth="500"
+           styleClass="mainFxmlClass" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mx.fei.gui.RentaController">
     <stylesheets>
         <URL value="@renta.css"/>
     </stylesheets>
+    
+    <VBox id="vBox" prefHeight="350.0" prefWidth="500.0">
+    
     
     <Label text="Realizar Renta">
         <font>
@@ -98,22 +105,22 @@
     </HBox>
     
     <HBox>
-        <TextField fx:id="mesCaducidad"
+        <ComboBox fx:id="mesCaducidad"
                    promptText="Mes"
                    prefWidth="100">
             
             <HBox.margin>
                 <Insets top="10" left="15" right="10"/>
             </HBox.margin>
-        </TextField>
-        <TextField fx:id="anioCaducidad"
+        </ComboBox>
+        <ComboBox fx:id="anioCaducidad"
                    promptText="Año"
                    prefWidth="100">
             
             <HBox.margin>
                 <Insets top="10" right="10"/>
             </HBox.margin>
-        </TextField>
+        </ComboBox>
         
         <TextField fx:id="ccv"
                    promptText="CCV"
@@ -156,9 +163,8 @@
     </HBox>
     
     <HBox prefWidth="500"
-          prefHeight="300">
-        <StackPane fx:id="stack"
-                   prefWidth="500"
+          prefHeight="50">
+        <StackPane prefWidth="500"
                    HBox.hgrow="ALWAYS">
             
             <JFXButton fx:id="botonAceptar"
@@ -172,3 +178,4 @@
     </HBox>
     
 </VBox>
+</StackPane>

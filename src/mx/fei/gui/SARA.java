@@ -5,12 +5,15 @@
  */
 package mx.fei.gui;
 
+import java.util.List;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.stage.Stage;
+import mx.fei.DAO.VehiculoDAO;
+import mx.fei.domain.Vehiculo;
 
 /**
  *
@@ -23,7 +26,7 @@ public class SARA extends Application {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        launch(args);
+       launch(args);
     }
     
     @Override

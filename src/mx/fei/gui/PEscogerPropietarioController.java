@@ -22,9 +22,11 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.control.ListCell;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
+import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
 import mx.fei.DAO.UsuarioDAO;
 import mx.fei.domain.Usuario;
@@ -42,11 +44,20 @@ public class PEscogerPropietarioController implements Initializable {
     private ObservableList<Usuario> observableUsuario;
     private ListView<Usuario> vistaUsuario;
     
+    @FXML
+    private GridPane gridPane;
+    
     @FXML 
     private TextField txtPropietario;
     
     @FXML
     private ListView listaUsuarios;
+    
+    @FXML
+    private Button PagregarPropietario;
+    
+    @FXML
+    private Button BagregarAuto;
     
     private String rfc;
     
@@ -94,6 +105,13 @@ public class PEscogerPropietarioController implements Initializable {
         });
     }
     
+      @FXML
+        private void closeButtonAction(){
+            // get a handle to the stage
+            Stage stage = (Stage) txtPropietario.getScene().getWindow();
+            // do what you have to do
+             stage.close();
+        }
    
        @FXML
        public void cargarPaginaAgregarAuto(ActionEvent event) {
@@ -106,9 +124,27 @@ public class PEscogerPropietarioController implements Initializable {
              
              stage.setScene(scene);
              stage.show();
+             
          } catch (IOException ex) {
              Logger.getLogger(PAgregarAuto.class.getName()).log(Level.SEVERE, null, ex);
          }
        }
-    
+       
+       @FXML
+       public void cargarPaginaAgregarPropietario(ActionEvent event) {
+         Stage stage = new Stage();
+         try {
+             Parent root = FXMLLoader.load(getClass().getResource("PAgregarPropietario.fxml"));
+             Scene scene = new Scene(root);
+   
+     
+             stage.setScene(scene);
+             stage.show();
+             closeButtonAction();
+         } catch (IOException ex) { 
+            Logger.getLogger(PAgregarPropietarioController.class.getName()).log(Level.SEVERE, null, ex);
+        } 
+       }
+       
+       
 }

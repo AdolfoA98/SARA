@@ -53,35 +53,8 @@ public class PrincipalAutosController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         
         //autos = vehiculoDao.obtenerVehiculos();
-        autos = new ArrayList<>();
-        Vehiculo vehiculo = new Vehiculo();
-        vehiculo.setDescripcion("No se");
-        vehiculo.setMarca("Ford");
-        vehiculo.setModelo("No se");
-        vehiculo.setVersion("No se");
-        vehiculo.setThumbnail("mx/fei/images/slider3.jpg");
-        vehiculo.setTransmision(1);
-        vehiculo.setKml(129.9);
-        vehiculo.setGps(1);
-        vehiculo.setNumPuertas(4);
-        vehiculo.setKilometraje(240.8);
-        vehiculo.setEstado(4);
-        vehiculo.setNumPasajeros(5);
-        Vehiculo vehiculo2 = new Vehiculo();
-        vehiculo2.setDescripcion("No se");
-        vehiculo2.setMarca("Ford");
-        vehiculo2.setModelo("No se");
-        vehiculo2.setVersion("No se");
-        vehiculo2.setThumbnail("mx/fei/images/slider3.jpg");
-        vehiculo2.setTransmision(1);
-        vehiculo2.setKml(129.9);
-        vehiculo2.setGps(1);
-        vehiculo2.setNumPuertas(4);
-        vehiculo2.setKilometraje(240.8);
-        vehiculo2.setEstado(4);
-        vehiculo2.setNumPasajeros(5);
-        autos.add(vehiculo);
-        autos.add(vehiculo2);
+        vehiculoDao = new VehiculoDAO();
+        autos = vehiculoDao.obtenerVehiculos();
         observableAutos = FXCollections.observableArrayList(autos);
         
         listaAutos.setItems(observableAutos);

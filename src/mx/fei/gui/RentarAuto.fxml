@@ -262,7 +262,7 @@
                     <ImageView fitHeight="25"
                                fitWidth="30">
                         <image>
-                            <Image url="mx/fei/images/kilometraje.png"/>
+                            <Image url="mx/fei/images/kilometraje.jpg"/>
                         </image>
                 
                         <HBox.margin>

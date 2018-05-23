@@ -50,11 +50,15 @@ public class PrincipalController implements Initializable {
     @FXML
     private JFXButton botonBuscar;
     
+    private Slider sliderController;
+    private boolean runSlider;
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
-        new ThreadImpl().start();
+        runSlider = true;
+        sliderController = new Slider();
+        sliderController.start();
         flotillas.getItems().add(new Label("Xalapa"));
         flotillas.getItems().add(new Label("Veracruz"));
         flotillas.getItems().add(new Label("Puebla"));
@@ -80,9 +84,11 @@ public class PrincipalController implements Initializable {
     
     @FXML
     public void cargarPaginaAutos(){
+        runSlider = false;
         Stage actualStage = (Stage) botonBuscar.getScene().getWindow();
         Stage stage = new Stage();
         try {
+            
             Parent root = FXMLLoader.load(getClass().getResource("PrincipalAutos.fxml"));
             
             Scene scene = new Scene(root);
@@ -101,7 +107,7 @@ public class PrincipalController implements Initializable {
         }
     }
 
-    private class ThreadImpl extends Thread {
+    private class Slider extends Thread {
 
         @Override
         public void run(){
@@ -113,7 +119,7 @@ public class PrincipalController implements Initializable {
             
             int contador = 0;
             
-            while(true){
+            while(runSlider){
                 try{
                     contador++;
                     if(contador < 3){

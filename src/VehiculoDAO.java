@@ -89,7 +89,37 @@ public class VehiculoDAO implements IVehiculoDAO {
             while(result.next()){
                 Vehiculo vehiculo = new Vehiculo();
                 vehiculo.setNoMotor(result.getString("noMotor"));
-               
+                if("si".equals(result.getString("climatizado"))){
+                    vehiculo.setClimatizado(1);
+                }else{
+                    vehiculo.setClimatizado(2);
+                }
+                if("manual".equals(result.getString("transmision"))){
+                    vehiculo.setTransmision(1);
+                }else{
+                    vehiculo.setTransmision(2);
+                }
+                vehiculo.setNumPasajeros(result.getInt("numPasajeros"));
+                vehiculo.setNumPuertas(result.getInt("numPuertas"));
+                vehiculo.setMarca(result.getString("marca"));
+                vehiculo.setModelo(result.getString("modelo"));
+                vehiculo.setVersion(result.getString("version"));
+                vehiculo.setKilometraje(result.getDouble("kilometraje"));
+                vehiculo.setKml(result.getDouble("kml"));
+                if("si".equals(result.getString("gps"))){
+                    vehiculo.setGps(1);
+                }else{
+                    vehiculo.setGps(2);
+                }
+                vehiculo.setDescripcion(result.getString("descripcion"));
+                vehiculo.setEstado(Integer.parseInt(result.getString("estado")));
+                if("disponible".equals(result.getString("disponibilidad"))){
+                    vehiculo.setDisponibilidad(1);
+                }else{
+                    vehiculo.setDisponibilidad(2);
+                }
+                vehiculo.setPrecioDia(result.getDouble("precioDia"));
+                vehiculo.setThumbnail(result.getString("Thumbnail"));
                 listaVehiculos.add(vehiculo);
             }
         }catch (SQLException ex) {
@@ -97,6 +127,7 @@ public class VehiculoDAO implements IVehiculoDAO {
         }finally {
             DB.closeConnection();
         }
+        System.out.println(listaVehiculos.get(0));
         return listaVehiculos;
     }
     

@@ -17,5 +17,5 @@ public interface IUsuarioDAO {
     List<Usuario> ObtenerTodoslosCliente();
     List<Usuario> obtenerClientePorNombre(String nombreCliente);
     Usuario obtenerClientePorMatricula(String MatriculaCliente);
-    boolean agregarCliente(Usuario cliente, String tarjetaCredito);
+    boolean agregarCliente(Usuario cliente);
 }

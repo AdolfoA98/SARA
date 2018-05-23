@@ -5,17 +5,24 @@
  */
 package mx.fei.gui;
 
-import com.jfoenix.controls.JFXComboBox;
+import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXDialog;
+import com.jfoenix.controls.JFXDialog.DialogTransition;
+import com.jfoenix.controls.JFXDialogLayout;
 import java.net.URL;
 import java.util.ResourceBundle;
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Alert;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.StackPane;
-import javafx.scene.layout.VBox;
+import javafx.scene.text.Text;
 import mx.fei.domain.Vehiculo;
 
 /**
@@ -27,6 +34,13 @@ public class RentaController implements Initializable {
     
     private static Vehiculo vehiculo;
     
+    public static void setInfo(Vehiculo auto){
+        vehiculo = auto;
+    }
+    
+    private JFXDialog dialog;
+    private JFXDialogLayout dialogLayout;
+    
     @FXML
     private StackPane stack;
     
@@ -37,10 +51,10 @@ public class RentaController implements Initializable {
     private TextField cuatroDigitos;
     
     @FXML
-    private TextField mesCaducidad;
+    private ComboBox<Label> mesCaducidad;
     
     @FXML
-    private TextField anioCaducidad;
+    private ComboBox<Label> anioCaducidad;
     
     @FXML
     private TextField ccv;
@@ -50,23 +64,40 @@ public class RentaController implements Initializable {
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+        mesCaducidad.getItems().add(new Label("01"));
+        mesCaducidad.getItems().add(new Label("02"));
+        mesCaducidad.getItems().add(new Label("03"));
+        mesCaducidad.getItems().add(new Label("04"));
+        mesCaducidad.getItems().add(new Label("05"));
+        mesCaducidad.getItems().add(new Label("06"));
+        mesCaducidad.getItems().add(new Label("07"));
+        mesCaducidad.getItems().add(new Label("08"));
+        mesCaducidad.getItems().add(new Label("09"));
+        mesCaducidad.getItems().add(new Label("10"));
+        mesCaducidad.getItems().add(new Label("11"));
+        mesCaducidad.getItems().add(new Label("12"));
+        
+        anioCaducidad.getItems().add(new Label("2019"));
+        anioCaducidad.getItems().add(new Label("2020"));
+        anioCaducidad.getItems().add(new Label("2021"));
+        anioCaducidad.getItems().add(new Label("2022"));
+        anioCaducidad.getItems().add(new Label("2023"));
         
         tipo.getItems().add(new Label("Visa"));
         tipo.getItems().add(new Label("Mastercard"));
     }
 
-    public static void setInfo(Vehiculo auto){
-        vehiculo = auto;
-    }
     
     @FXML
     public void realizarRenta(){
-        System.out.println(noTarjeta.getText());
-        if("".equals(cuatroDigitos.getText()) && "".equals(mesCaducidad.getText()) && "".equals(anioCaducidad.getText()) && "".equals(ccv.getText()) && "".equals(noTarjeta.getText()) ){
-            JFXDialog dialog = new JFXDialog();
-            dialog.setPrefHeight(200);
-            dialog.setContent(new Label("Hay campos vacíos que son importantes para la realización de la renta"
-                                        + ". Introduzca la información correspondiente he inténtelo de nuevo. "));
+        if("".equals(cuatroDigitos.getText())|| "".equals(ccv.getText()) || "".equals(noTarjeta.getText()) ){
+            Mensaje mensaje = new Mensaje();
+            mensaje.setHeader("Datos faltantes");
+            mensaje.setBody("Parece que hay campos vacíos que son necesarios para realizar la renta."
+                                + " Sin esta información no podremos realizarla transacción de manera exitosa."
+                                + " Introduzca los datos e inténtelo nuevamente");
+            dialog = new JFXDialog(stack, mensaje, DialogTransition.CENTER);
+            mensaje.setDialog(dialog);
             dialog.show(stack);
         }
     }

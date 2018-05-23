@@ -12,7 +12,7 @@ import mx.fei.domain.Vehiculo;
  */
 public interface IVehiculoDAO {
     
-    boolean agregarAuto(Vehiculo vehiculo, String rfcCliente, String flotilla, String matriculaAdmi);
+    boolean agregarAuto(Vehiculo vehiculo, String rfcCliente, String flotilla);
     boolean eliminarAuto(String noMotor);
     List<Vehiculo> obtenerVehiculos();
 }

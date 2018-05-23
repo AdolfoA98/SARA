@@ -5,9 +5,6 @@
  */
 package mx.fei.domain;
 
-import mx.fei.DAO.FacturaDAO;
-import mx.fei.DAO.TarjetaCreditoDAO;
-
 /**
  *
  * @author jethr
@@ -125,66 +122,6 @@ public class Usuario {
 
     public void setContrasena(String contrasena) {
         this.contrasena = contrasena;
-    }
-    
-    public boolean realizarCompra(Vehiculo vehiculo, TarjetaCredito credito, String metodoPago, int diasRenta, boolean factura){
-        boolean pagoExitoso = false;
-        double montoPago = vehiculo.getPrecioDia() * diasRenta;
-        switch(metodoPago){
-            case "deposito":
-                pagoExitoso = pagoPorDeposito(vehiculo);
-                break;
-            case "transaccion":
-                pagoExitoso = pagoPorTransaccion(vehiculo);
-                break;
-            case "tarjeta":
-                pagoExitoso = pagoPorTarjetaCredito(vehiculo, credito, montoPago);
-                break;
-            default:         
-        }
-        
-        if(factura){
-            if(pagoExitoso){
-                generarFactura(vehiculo, montoPago, diasRenta);
-            }
-        }
-        
-        return pagoExitoso;
-       
-    }
-    
-    public boolean pagoPorDeposito(Vehiculo vehiculo){
-        boolean pagoExitoso = true;
-        
-        return pagoExitoso;
-    }
-    
-    public boolean pagoPorTransaccion(Vehiculo vehiculo){
-        boolean pagoExitoso = true;
-        
-        return pagoExitoso;
-    }
-    
-    public boolean pagoPorTarjetaCredito(Vehiculo vehiculo, TarjetaCredito credit, double montoPago){
-        TarjetaCreditoDAO creditDAO = new TarjetaCreditoDAO();
-        creditDAO.agregarTarjetaCredito(credit, rfc);
-        
-        return Banco.realizarPagoTarjeta(credit, montoPago);
-    }
-    
-    public void generarFactura(Vehiculo vehiculo, double montoPago, int diasRenta){
-        Factura factura = new Factura();
-        FacturaDAO facturaDAO = new FacturaDAO();
-        
-        factura.vehiculo = vehiculo;
-        factura.setDiasRenta(diasRenta);
-        factura.setConcepto("Renta de vehiculo:" + vehiculo.getMarca() + " " + vehiculo.getModelo());
-        factura.setDireccionAlmacenamiento("");
-        factura.setLugarEntrega(" ");
-        factura.setTotalImpuestosAñadidos(0.0);
-        factura.setNumeroFactura(0);
-        
-        facturaDAO.crearFactura(factura);
     }
     
     

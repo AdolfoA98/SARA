@@ -13,3 +13,11 @@
 #botonAceptar{
     -fx-background-color:#4CAF50;
 }
+
+#dialogLayout{
+    -fx-background-color: #FAFAFA;
+}
+
+#botonCerrar{
+    -fx-background-color: #4CAF50;
+}
