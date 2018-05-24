@@ -49,6 +49,8 @@ public class PrincipalAutosController implements Initializable {
     
     private VehiculoDAO vehiculoDao;
     
+    private static int diasARentar;
+    
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         
@@ -70,7 +72,7 @@ public class PrincipalAutosController implements Initializable {
                     setText(null);
                 } else {
                     AutoListItemController controller = new AutoListItemController();
-                    controller.setInformacion(vehiculo);
+                    controller.setInformacion(vehiculo, diasARentar);
                     setGraphic(controller.getBox());
                 }
             }
@@ -117,5 +119,11 @@ public class PrincipalAutosController implements Initializable {
             Logger.getLogger(PrincipalController.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
+    
+    
+    public static void setDiasARentar(int dias){
+        diasARentar = dias;
+    }
+    
     
 }

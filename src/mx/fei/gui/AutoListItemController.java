@@ -72,6 +72,8 @@ public class AutoListItemController{
     @FXML
     private Label precioTotal;
     
+    private int dias;
+    
     public AutoListItemController(){
         FXMLLoader loader = new FXMLLoader(getClass().getResource("AutoListItem.fxml"));
         loader.setController(this);
@@ -83,8 +85,8 @@ public class AutoListItemController{
         }
     }
     
-    public void setInformacion(Vehiculo vehiculo){
-        
+    public void setInformacion(Vehiculo vehiculo, int dias){
+        this.dias = dias;
         this.vehiculo = vehiculo;
         System.out.println(vehiculo.getDescripcion());
         imagenAuto.setImage(new Image(vehiculo.getThumbnail()));
@@ -116,7 +118,7 @@ public class AutoListItemController{
         }
         
         precioDia.setText("MXN $" + Double.toString(vehiculo.getPrecioDia()));
-        
+        precioTotal.setText("Total: MXN $" + Double.toString(vehiculo.getPrecioDia() * dias));
     }
     
     @FXML

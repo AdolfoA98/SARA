@@ -34,7 +34,8 @@
           styleClass="header"
           GridPane.rowIndex="1">
         
-        <StackPane HBox.hgrow="ALWAYS">
+        <StackPane fx:id="stack"
+                   HBox.hgrow="ALWAYS">
             <ImageView fitWidth="100"
                        fitHeight="80"
                        StackPane.alignment="CENTER_LEFT">

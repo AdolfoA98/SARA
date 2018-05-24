@@ -35,6 +35,7 @@ public class RentarAutoController{
     
     private static Vehiculo vehiculo;
     private FXMLLoader loader;
+    private int dias;
     
     @FXML
     private GridPane gridPane;
@@ -98,9 +99,9 @@ public class RentarAutoController{
         return this.gridPane;
     }
     
-    public void setInfo(Vehiculo auto){
+    public void setInfo(Vehiculo auto, int dias){
         vehiculo = auto;
-        
+        this.dias = dias;
         imagenAuto.setImage(new Image(auto.getThumbnail()));
         titulo.setText(vehiculo.getDescripcion());
         marca.setText(vehiculo.getMarca());
@@ -130,6 +131,7 @@ public class RentarAutoController{
         }
         
         precioDia.setText("MXN $" + Double.toString(vehiculo.getPrecioDia()));
+        precioTotal.setText("Total: MXN $" + Double.toString(vehiculo.getPrecioDia() * dias));
     }
 
     @FXML
