@@ -208,7 +208,7 @@
         </VBox>
         
         <JFXButton fx:id="botonRentar"
-                   text="Ver más"
+                   text="Rentar"
                    prefHeight="50"
                    prefWidth="100"
                    StackPane.alignment="BOTTOM_RIGHT"

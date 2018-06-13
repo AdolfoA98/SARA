@@ -5,6 +5,7 @@
  */
 package mx.fei.gui;
 
+import com.jfoenix.controls.JFXButton;
 import java.util.logging.Logger;
 import java.io.IOException;
 import java.net.URL;
@@ -32,6 +33,9 @@ import mx.fei.domain.Vehiculo;
 public class AutoListItemController{
     
     private Vehiculo vehiculo;
+    
+    @FXML
+    private JFXButton botonRentar;
     
     @FXML
     private HBox autoItem;
@@ -88,9 +92,9 @@ public class AutoListItemController{
     public void setInformacion(Vehiculo vehiculo, int dias){
         this.dias = dias;
         this.vehiculo = vehiculo;
-        System.out.println(vehiculo.getDescripcion());
+        
         imagenAuto.setImage(new Image(vehiculo.getThumbnail()));
-        titulo.setText(vehiculo.getDescripcion());
+        titulo.setText(vehiculo.getMarca() + " " + vehiculo.getModelo() + " " + vehiculo.getVersion());
         marca.setText(vehiculo.getMarca());
         modelo.setText(vehiculo.getModelo());
         
@@ -115,6 +119,7 @@ public class AutoListItemController{
             disponibilidad.setText("Disponible");
         }else{
             disponibilidad.setText("No disponible");
+            botonRentar.setDisable(true);
         }
         
         precioDia.setText("MXN $" + Double.toString(vehiculo.getPrecioDia()));
@@ -130,7 +135,7 @@ public class AutoListItemController{
            
         Scene scene = new Scene(root);
            
-        controller.setInfo(vehiculo);
+        controller.setInfo(vehiculo, dias);
         stage.setScene(scene);
         stage.setResizable(false);
         stage.setOnCloseRequest((WindowEvent t) -> {

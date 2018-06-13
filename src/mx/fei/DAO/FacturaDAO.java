@@ -3,13 +3,14 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package sistema.administracion.vehiculos;
+package mx.fei.DAO;
 
 import java.sql.*;
 import java.text.SimpleDateFormat;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import java.util.Date;
+import mx.fei.DS.DB;
+import mx.fei.domain.Factura;
 
 /**
  *
@@ -26,7 +27,7 @@ public class FacturaDAO implements IFacturaDAO {
     
     @Override
     public boolean crearFactura(Factura factura){
-        connection = DataBase.getDataBaseConnection();
+        connection = DB.getDataBaseConnection();
         query = "insert into factura (numeroFactura, fechaFacturacion, concepto, totalImpuestosAñadidos, direccionAlmacenamiento, diasRenta, Vehiculo_noMotor, Usuario_rfc)"
               + "values (?, ?, ?, ?, ?, ?, ?, ?) ";
         try {

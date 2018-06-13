@@ -22,7 +22,7 @@ public class DB {
     private static void makeConnection(){
        
         
-        try {
+        try {   
             
             String url= "jdbc:mysql://localhost/";
             String databaseName = "sara-bd";

@@ -124,7 +124,7 @@
             
             <VBox StackPane.alignment="TOP_LEFT">
                 <Label text="Entrega" />
-                <HBox  fx:id="horaRecogida">
+                <HBox>
                     <JFXDatePicker fx:id="fechaRecogida"
                                    promptText="Fecha de Recogida"
                                    prefWidth="200"
@@ -146,7 +146,8 @@
             <VBox StackPane.alignment="BOTTOM_LEFT">
                 <Label text="Devolución" />
                 <HBox>
-                    <JFXDatePicker promptText="Fecha de devolución"
+                    <JFXDatePicker fx:id="fechaDevolucion"
+                                   promptText="Fecha de devolución"
                                    prefWidth="150"
                                    prefHeight="30"/>
                     <JFXTimePicker

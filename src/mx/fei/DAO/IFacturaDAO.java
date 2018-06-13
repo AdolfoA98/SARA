@@ -13,6 +13,5 @@ import mx.fei.domain.Factura;
  */
 public interface IFacturaDAO {
     
-    public boolean crearFactura(Factura factura);
-    
+    boolean crearFactura(Factura factura);
 }
